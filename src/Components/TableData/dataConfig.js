@@ -94,6 +94,7 @@ const dataConfig = {
       value: '8',
       style: {}
     },
+    
 
   ]
 };
