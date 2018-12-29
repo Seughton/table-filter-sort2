@@ -31,7 +31,7 @@ const dataConfig = {
       filtering: true,
       sorting: true,
       style: {}
-    }
+    },
   ],
   cells : [
     {
@@ -55,19 +55,19 @@ const dataConfig = {
       style: {}
     },
     {
-      value: 'So',
+      value: `${Math.floor(Math.random() * 101)}`,
       style: {}
     },
     {
-      value: '312',
+      value: `${Math.floor(Math.random() * 101)}`,
       style: {}
     },
     {
-      value: '123',
+      value: `${Math.floor(Math.random() * 101)}`,
       style: {}
     },
     {
-      value: 'ue',
+      value: `${Math.floor(Math.random() * 101)}`,
       style: {}
     },
     {
@@ -75,25 +75,63 @@ const dataConfig = {
       style: {}
     },
     {
-      value: '16',
+      value: `${Math.floor(Math.random() * 101)}`,
       style: {}
     },
     {
-      value: '2',
+      value: `${Math.floor(Math.random() * 101)}`,
       style: {}
     },
     {
-      value: '4',
+      value: `${Math.floor(Math.random() * 101)}`,
       style: {}
     },
     {
-      value: '1',
+      value: `${Math.floor(Math.random() * 101)}`,
       style: {}
     },
     {
-      value: '8',
+      value: `${Math.floor(Math.random() * 101)}`,
       style: {}
     },
+    {
+      value: `${Math.floor(Math.random() * 101)}`,
+      style: {}
+    },
+    {
+      value: `${Math.floor(Math.random() * 101)}`,
+      style: {}
+    },
+    {
+      value: `${Math.floor(Math.random() * 101)}`,
+      style: {}
+    },
+    {
+      value: `${Math.floor(Math.random() * 101)}`,
+      style: {}
+    },
+    {
+      value: `${Math.floor(Math.random() * 101)}`,
+      style: {}
+    },
+    {
+      value: `${Math.floor(Math.random() * 101)}`,
+      style: {}
+    },
+    {
+      value: `${Math.floor(Math.random() * 101)}`,
+      style: {}
+    },
+    {
+      value: `${Math.floor(Math.random() * 101)}`,
+      style: {}
+    },
+    {
+      value: `${Math.floor(Math.random() * 101)}`,
+      style: {}
+    },
+  
+  
     
 
   ]

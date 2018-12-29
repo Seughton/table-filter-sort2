@@ -1,0 +1,81 @@
+@font-face {
+  font-family: Sansation_Light; /* Имя шрифта */
+  src: url('../../Assets/Sansation_Light.ttf'); /* Путь к файлу со шрифтом */
+ }
+
+ *{
+   font-family: 'Sansation_Light';
+   font-size: 18px;
+ }
+
+table {
+    overflow:hidden;
+    border:1px solid #d3d3d3;
+    background:rgb(160, 121, 121);
+    width:70%;
+    margin:5% auto 0;
+    margin-top: 15px;
+    -moz-border-radius:5px; /* FF1+ */
+    -webkit-border-radius:5px; /* Saf3-4 */
+    border-radius:5px;
+    /* empty-cells: hide; */
+    -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+tbody th {
+  background-color: #eee;
+}
+
+.table-col0,
+.table-col1,
+.table-col2,
+.table-col3,
+.table-col4,
+.table-col5,
+.table-col6 {
+  
+  border-right: 2px solid rgb(160, 121, 121)
+}
+
+.table-col0 tr,
+.table-col1 tr,
+.table-col2 tr,
+.table-col3 tr,
+.table-col4 tr,
+.table-col5 tr,
+.table-col6 tr{
+height: 30px;
+}
+
+/* .table-col0 {
+  padding-left: 15%;
+}
+.table-col2 {
+  padding-left: 20%;
+} */
+
+.sorted-col {
+  border-right: 2px solid rgb(175, 12, 12);
+  padding-left: 20%;
+}
+
+.filter-field {
+  height: 50px;
+}
+
+.search-field {
+  height: 40px;
+}
+
+.search-field-input {
+  border: 2px solid rgba(175, 12, 12,.8);
+  border-radius: 10px;
+  height: 24px;
+  text-indent: 10px;
+  outline:none;
+}
+
+.col-name {
+  padding-right: 5px;
+}

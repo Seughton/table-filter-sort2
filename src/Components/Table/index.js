@@ -3,6 +3,7 @@ import chunk from 'lodash.chunk';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import './table.css'
 
 library.add(faAngleDown);
 
@@ -66,54 +67,58 @@ class Table extends Component {
 
     return (
       <>
-        <table style={{ width: '80%', margin: '0 auto' }}>
-          <thead>          
-            {
-              this.props.data.columns.map((item, index) => {
-                return (
-                  item.filtering ?
-                    <div key={index} >
-                      <input type="text"
-                        onChange={dataSearch.bind(this, index)}
-                        value={this.state.searchValue[index]} />
-                    </div>
-                    : null
-                )
-              })
-            }
-            <tr>
+        <table cellspacing="0">
+          <thead>
+
+            <tr className="filter-field">
               {
                 this.props.data.columns.map((item, i) => {
+                  return (
+                    <th key={i}>
+                      {
+                        item.sorting &&
+                          (this.state.searchValue.every((value) => value === '')) ?
+                          <div onClick={item.sorting ? () => this.sortValues(i) : null}>
+                            <span className='col-name'>Column {i + 1}</span>
+                            <FontAwesomeIcon
+                              key={i}
+                              icon="angle-down"
+                              rotation={this.state.sorting ? 180 : null}
+                            />
+                          </div> : ``
+
+                      }
+                    </th>)
+                })
+              }
+            </tr>
+            <tr className="search-field">
+              {this.props.data.columns.map((item, index) => {
                 return (
-                  <th key={i}>
-                    {
-                      item.sorting &&
-                        (!this.state.sortedArr === [] ||
-                          this.state.searchValue == '') ?
-                        <div onClick={item.sorting ? () => this.sortValues(i) : null}>
-                          Column {i+1}
-                        <FontAwesomeIcon                          
-                          key={i}
-                          icon="angle-down"
-                          rotation={this.state.sorting ? 180 : null}
-                        />
-                        </div> : ''
-                        
-                    }
-                  </th>)
+                  item.filtering ?
+                    <th>
+                      <input type="text"
+                        className='search-field-input'
+                        placeholder='Search...'
+                        onChange={dataSearch.bind(this, index)}
+                        value={this.state.searchValue[index]} />
+                    </th>
+                    : <th></th>
+                )
               })
               }
             </tr>
+
           </thead>
           <tbody>
             {this.state.searchValue.every((value) => value === '') ||
               this.state.searchValue.length === 0 ?
               this.state.chankedArr.map((item, i) => {
                 return (
-                  <th key={i}>
+                  <th key={i} className={`table-col${i}`}>
                     {item.map((item, i) => {
                       return (
-                        <tr key={i}>
+                        <tr key={i} >
                           {item.value}
                         </tr>)
                     })
@@ -121,13 +126,13 @@ class Table extends Component {
                   </th>
                 )
               }) :
-              <th >
+              <th className="sorted-col">
                 {
                   this.state.sortedArr.map((item, i) => {
-                  return (
-                    <tr key={i}>{item.value}</tr>
-                  )
-                })
+                    return (
+                      <tr key={i} >{item.value}</tr>
+                    )
+                  })
                 }
               </th>
             }
