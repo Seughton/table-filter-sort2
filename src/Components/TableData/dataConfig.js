@@ -6,7 +6,7 @@
 //
 // };
 //
-// export const rowStyles = {
+// export const cellStyles = {
 //   background: "transparent",
 //   textAlign: 'center',
 //   borderBottom: '1px solid black'
@@ -18,13 +18,13 @@ const dataConfig = {
       type: 'string',       //'string' || 'number'
       filtering: true,
       sorting: true,
-      style: {}
+      style: {}             //colStyles
     },
     {
       type: 'number',       //'string' || 'number'
       filtering: false,
       sorting: false,
-      style: {}
+      style: {}             //...colStyles[i],...cellStyles[*]
     },
     {
       type: 'number',       //'string' || 'number'
