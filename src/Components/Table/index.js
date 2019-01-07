@@ -81,6 +81,7 @@ class Table extends Component {
                           <div onClick={item.sorting ? () => this.sortValues(i) : null}>
                             <span className='col-name'>Column {i + 1}</span>
                             <FontAwesomeIcon
+                              style={{cursor: 'pointer'}}
                               key={i}
                               icon="angle-down"
                               rotation={this.state.sorting ? 180 : null}

@@ -78,4 +78,5 @@ height: 30px;
 
 .col-name {
   padding-right: 5px;
+  cursor: pointer;
 }
